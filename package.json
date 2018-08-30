@@ -1,0 +1,15 @@
+{
+  "name": "chikyu-sdk",
+  "version": "1.0.0",
+  "description": "chikyu SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GENIEE inc.",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.304.0",
+    "node-fetch": "^2.2.0"
+  }
+}

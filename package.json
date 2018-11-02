@@ -8,6 +8,10 @@
   },
   "author": "GENIEE inc.",
   "license": "ISC",
+  "repository": {
+    "type":  "git",
+    "url": "https://github.com/chikyuinc/chikyu-sdk-nodejs.git"
+  },
   "dependencies": {
     "aws-sdk": "^2.304.0",
     "node-fetch": "^2.2.0"

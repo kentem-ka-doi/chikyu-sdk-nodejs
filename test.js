@@ -7,16 +7,30 @@ token_name = 'nodejssdk_login001';
 // ここに、get_login.jsでリターンされたtokenをセットしてください。
 token = 'ここにget_login.jsでリターンされたtokenをセット';
 // ここに、get_login.jsでリターンされたsecret_tokenをセットしてくださいをセットしてください。
-secret_token = 'ここにget_login.jsでリターンされたsecret_tokenをセットしてください';
+secret_token = 'ここにget_login.jsでリターンされたsecret_tokenをセット';
 
 // 上記で、設定された、token_name, token, secret_tokenの３つによって、ログインができます。
 chikyu.session.login(token_name, token, secret_token).then((r) => {
-   // 以下はログイン後に、一覧取得の基本APIの「/entity/ここに取得したいオブジェクト名/list」に、
-   // 商談(business_discussions)をセットして、商談の一覧Listを取得した例です。
-   // ページ設定は必須です。page_index→0からスタートで何ページ目からか。items_per_page→１ページの表示件数。(Maxは500)
-   return chikyu.secure.invoke('/entity/business_discussions/list', {'items_per_page': 10, 'page_index': 0}).then((d) => {
-      console.log(d);
-   });
+
+   // ここでchangeOrgan()の引数に組織IDを数値型でセットする。
+   chikyu.session.changeOrgan(ここに数値型で組織IDをセットする).then((s) => {
+
+      // 以下はログイン後に、一覧取得の基本APIの「/entity/ここに取得したいオブジェクト名/list」に、
+      // 商談(business_discussions)をセットして、商談の一覧Listを取得した例です。
+      // ページ設定は必須です。page_index→0からスタートで何ページ目からか。items_per_page→１ページの表示件数。(Maxは500)
+      return chikyu.secure.invoke('/entity/business_discussions/list', {
+
+         // listAPIの最低限のページングの必須項目だけセット
+         'items_per_page': 10, 'page_index': 0
+
+      }).then((d) => {
+         console.log(d);
+      });
+
+   }).catch((e) => {
+      console.log(e);
+   }); // End changeOrgan
+
 }).catch((e) => {
-   console.log(e);
-});
+console.log(e);
+}); // End login

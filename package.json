@@ -13,7 +13,7 @@
     "url": "https://https://github.com/kentem-ka-doi/chikyu-sdk-nodejs"
   },
   "dependencies": {
-    "aws-sdk": "^2.304.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^1.7.8"
   }
 }
